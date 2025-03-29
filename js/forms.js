@@ -1,4 +1,5 @@
-import fetchData from "./api.js";
+import { fetchData } from "./api.js";
+import { CardHTML } from "./classesHTML.js";
 
 // VARIABLES OPCIONES TIRADAS
 const button1 = document.querySelector(".button1");
@@ -15,7 +16,6 @@ function cardOption1() {
     option1.classList.replace("hidden", "active");
     option2.classList.replace("active", "hidden");
     option3.classList.replace("active", "hidden");
-    console.log(fetchData);
 }
 button1.addEventListener("click", cardOption1);
 
@@ -24,6 +24,22 @@ function closeOption1() {
     option1.classList.replace("active", "hidden");
 }
 closeButton1.addEventListener("click", closeOption1);
+
+const option1Submit = document.querySelector(".option1__submit");
+async function oneCard() {
+    let cardData = await fetchData();
+    let cardAttributes = cardData.cards[0];
+    let displayCard = new CardHTML(
+        cardAttributes.type,
+        cardAttributes.name_short,
+        cardAttributes.name,
+        cardAttributes.value_int,
+        cardAttributes.meaning_up,
+        cardAttributes.meaning_rev,
+        cardAttributes.desc
+    )
+}
+option1Submit.addEventListener("click", oneCard);
 
 // CAMBIO DE CLASE PARA TIRADA OPCION 2 PARA VISUALIZAR Y ESCONDER FORMULARIO
 function cardOption2() {
@@ -47,7 +63,7 @@ function cardOption3() {
 }
 button3.addEventListener("click", cardOption3);
 
-const closeButton3 = document.getElementById("close-button-2");
+const closeButton3 = document.getElementById("close-button-3");
 function closeOption3() {
     option3.classList.replace("active", "hidden");
 }

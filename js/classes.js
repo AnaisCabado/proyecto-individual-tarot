@@ -9,3 +9,7 @@ class Card {
         this.desc = desc;
     }
 }
+
+export {
+    Card
+}
