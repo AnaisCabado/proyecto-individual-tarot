@@ -6,9 +6,52 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="./css/style.css">
-    <script defer type="module" src="./js/api.js"></script>
+    <script defer type="module" src="./js/functions.js"></script>
 </head>
 <body>
-    
+    <header>
+        <nav id="menu-header">
+            <img src="" alt="logotipo" class="menu-header__logo" loading="lazy">
+
+            <ul class="menu-header__nav">
+                <li class="menu-header__nav-link"><a href="#">HOME</a></li>
+                <li class="menu-header__nav-link"><a href="#">INSTRUCCIONES</a></li>
+                <li class="menu-header__nav-link"><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="buttons">
+            <button class="button1">1</button>
+            <button class="button2">2</button>
+        </section>
+
+        <section id="option1" class="hidden">
+            <form id="option1__form">
+				<h1>TITULO</h1>
+
+				<fieldset>
+					<legend>DATOS BÁSICOS</legend>
+					<div id="option1__form-questions">
+						<input type="text" id="name" name="name" required placeholder="Nombre">
+                        <input type="date">
+						<input type="email" id="sign" name="sign" required placeholder="Signo zodiacal">
+                        <input type="number" id="number" name="number" required placeholder="Elige un número de cartas" max="78" min="1">
+					</div>
+				</fieldset>
+				
+				<div id="option1__form-buttons">
+					<button type="submit">TIRADA DE CARTAS</button>
+				</div>
+			</form>
+
+            <button id="close-button-1">x</button>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 </html>

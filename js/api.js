@@ -1,6 +1,7 @@
-async function fetchData(url) {
+const baseURL = "https://tarotapi.dev/api/v1/cards";
+async function fetchData() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(baseURL);
 
         if(!response.ok) {
             throw new Error('no funciona');
@@ -14,4 +15,6 @@ async function fetchData(url) {
     }
 }
 
-fetchData("https://tarotapi.dev/api/v1/cards");
+fetchData();
+
+export default fetchData
