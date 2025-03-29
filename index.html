@@ -23,21 +23,23 @@
 
     <main>
         <section id="buttons">
-            <button class="button1">1</button>
-            <button class="button2">2</button>
+            <button class="button1">TIRADA DE ÚNICA CARTA</button>
+            <button class="button2">TIRADA DE 3 CARTAS</button>
+            <button class="button3">TIRADA DE CINCO CARTAS</button>
         </section>
 
         <section id="option1" class="hidden">
             <form id="option1__form">
-				<h1>TITULO</h1>
+				<h1>TIRADA DE ÚNICA CARTA</h1>
 
 				<fieldset>
 					<legend>DATOS BÁSICOS</legend>
 					<div id="option1__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date">
-						<input type="email" id="sign" name="sign" required placeholder="Signo zodiacal">
-                        <input type="number" id="number" name="number" required placeholder="Elige un número de cartas" max="78" min="1">
+						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
+                        <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
+                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
 					</div>
 				</fieldset>
 				
@@ -47,6 +49,52 @@
 			</form>
 
             <button id="close-button-1">x</button>
+        </section>
+
+        <section id="option2" class="hidden">
+            <form id="option2__form">
+				<h1>TIRADA DE 3 CARTAS</h1>
+
+				<fieldset>
+					<legend>DATOS BÁSICOS</legend>
+					<div id="option2__form-questions">
+						<input type="text" id="name" name="name" required placeholder="Nombre">
+                        <input type="date">
+						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
+                        <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
+                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
+					</div>
+				</fieldset>
+				
+				<div id="option2__form-buttons">
+					<button type="submit">TIRADA DE CARTAS</button>
+				</div>
+			</form>
+
+            <button id="close-button-2">x</button>
+        </section>
+
+        <section id="option3" class="hidden">
+            <form id="option3__form">
+				<h1>TIRADA DE 5 CARTAS</h1>
+
+				<fieldset>
+					<legend>DATOS BÁSICOS</legend>
+					<div id="option3__form-questions">
+						<input type="text" id="name" name="name" required placeholder="Nombre">
+                        <input type="date">
+						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
+                        <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
+                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
+					</div>
+				</fieldset>
+				
+				<div id="option3__form-buttons">
+					<button type="submit">TIRADA DE CARTAS</button>
+				</div>
+			</form>
+
+            <button id="close-button-3">x</button>
         </section>
     </main>
 

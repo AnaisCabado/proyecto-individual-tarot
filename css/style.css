@@ -171,13 +171,25 @@ body {
 /*OPCIONES TIRADAS*/
 /*FORMULARIOS*/
 /*FORMULARIO TIRADA 1*/
-#option1.hidden {
+#option1.hidden, #option2.hidden, #option3.hidden {
     display: none;
 }
 
-#option1.active {
+#option1.active, #option2.active, #option3.active {
     display: flex;
     flex-flow: column;
+}
+
+#option1 {
+    background-color: pink;
+}
+
+#option2 {
+    background-color: purple;
+}
+
+#option3 {
+    background-color: blue;
 }
 /*FORMULARIO TIRADA 2*/
 /*FOOTER*/
