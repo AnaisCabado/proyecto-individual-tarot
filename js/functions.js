@@ -15,6 +15,7 @@ function cardOption1() {
     option1.classList.replace("hidden", "active");
     option2.classList.replace("active", "hidden");
     option3.classList.replace("active", "hidden");
+    console.log(fetchData);
 }
 button1.addEventListener("click", cardOption1);
 
@@ -51,3 +52,10 @@ function closeOption3() {
     option3.classList.replace("active", "hidden");
 }
 closeButton3.addEventListener("click", closeOption3);
+
+
+export {
+    cardOption1, closeButton1,
+    cardOption2, closeButton2,
+    cardOption3, closeButton3
+}
