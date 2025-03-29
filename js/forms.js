@@ -55,6 +55,24 @@ function closeOption2() {
 }
 closeButton2.addEventListener("click", closeOption2);
 
+const option2Submit = document.querySelector(".option2__submit");
+async function threeCard() {
+    let cardData = await fetchData();
+    for (let i = 0; i < 3; i++) {
+        let cardAttributes = cardData.cards[i];
+        let displayCard = new CardHTML(
+            cardAttributes.type,
+            cardAttributes.name_short,
+            cardAttributes.name,
+            cardAttributes.value_int,
+            cardAttributes.meaning_up,
+            cardAttributes.meaning_rev,
+            cardAttributes.desc
+        )
+    }
+}
+option2Submit.addEventListener("click", threeCard);
+
 // CAMBIO DE CLASE PARA TIRADA OPCION 2 PARA VISUALIZAR Y ESCONDER FORMULARIO
 function cardOption3() {
     option1.classList.replace("active", "hidden");
@@ -68,6 +86,24 @@ function closeOption3() {
     option3.classList.replace("active", "hidden");
 }
 closeButton3.addEventListener("click", closeOption3);
+
+const option3Submit = document.querySelector(".option3__submit");
+async function fiveCard() {
+    let cardData = await fetchData();
+    for (let i = 0; i < 5; i++) {
+        let cardAttributes = cardData.cards[i];
+        let displayCard = new CardHTML(
+            cardAttributes.type,
+            cardAttributes.name_short,
+            cardAttributes.name,
+            cardAttributes.value_int,
+            cardAttributes.meaning_up,
+            cardAttributes.meaning_rev,
+            cardAttributes.desc
+        )
+    }
+}
+option3Submit.addEventListener("click", fiveCard);
 
 
 export {

@@ -7,8 +7,6 @@ class CardHTML extends Card {
     }
 
     initializeOption1HTML() {
-        console.log("casa");
-
         const option1Result = document.getElementById("option1-result");
 
         const card = document.createElement("div");
@@ -18,7 +16,7 @@ class CardHTML extends Card {
         const cardTitle = document.createElement("h4");
         const cardDescription = document.createElement("p");
 
-        cardImg.setAttribute("src", "./assets/aceofcups.jpeg");
+        cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
         cardImg.setAttribute("loading", "lazy");
         cardTitle.textContent = this.name;

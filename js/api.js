@@ -1,7 +1,7 @@
 const baseURL = "https://tarotapi.dev/api/v1/cards";
 async function fetchData() {
     try {
-        const response = await fetch(baseURL + "/random?n=1");
+        const response = await fetch(baseURL + "/random?n=5");
 
         if(!response.ok) {
             throw new Error('no funciona');
