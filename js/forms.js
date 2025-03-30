@@ -11,17 +11,23 @@ const option2 = document.getElementById("option2");
 const button3 = document.querySelector(".button3");
 const option3 = document.getElementById("option3");
 
+const overlay = document.getElementById("overlay");
+
 // CAMBIO DE CLASE PARA TIRADA OPCION 1 PARA VISUALIZAR Y ESCONDER FORMULARIO
 function cardOption1() {
     option1.classList.replace("hidden", "active");
     option2.classList.replace("active", "hidden");
     option3.classList.replace("active", "hidden");
+
+    overlay.classList.replace("hidden", "active");
 }
 button1.addEventListener("click", cardOption1);
 
 const closeButton1 = document.getElementById("close-button-1");
 function closeOption1() {
     option1.classList.replace("active", "hidden");
+
+    overlay.classList.replace("active", "hidden")
 }
 closeButton1.addEventListener("click", closeOption1);
 
@@ -46,12 +52,18 @@ function cardOption2() {
     option1.classList.replace("active", "hidden");
     option2.classList.replace("hidden", "active");
     option3.classList.replace("active", "hidden");
+
+    overlay.classList.replace("hidden", "active");
+
 }
 button2.addEventListener("click", cardOption2);
 
 const closeButton2 = document.getElementById("close-button-2");
 function closeOption2() {
     option2.classList.replace("active", "hidden");
+
+    overlay.classList.replace("active", "hidden");
+
 }
 closeButton2.addEventListener("click", closeOption2);
 
@@ -78,12 +90,17 @@ function cardOption3() {
     option1.classList.replace("active", "hidden");
     option2.classList.replace("active", "hidden");
     option3.classList.replace("hidden", "active");
+
+    overlay.classList.replace("hidden", "active");
+
 }
 button3.addEventListener("click", cardOption3);
 
 const closeButton3 = document.getElementById("close-button-3");
 function closeOption3() {
     option3.classList.replace("active", "hidden");
+
+    overlay.classList.replace("active", "hidden")
 }
 closeButton3.addEventListener("click", closeOption3);
 

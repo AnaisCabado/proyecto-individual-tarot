@@ -14,15 +14,15 @@
             <img src="" alt="logotipo" class="menu-header__logo" loading="lazy">
 
             <ul class="menu-header__nav">
-                <li class="menu-header__nav-link"><a href="#">HOME</a></li>
-                <li class="menu-header__nav-link"><a href="#">INSTRUCCIONES</a></li>
-                <li class="menu-header__nav-link"><a href="#">CONTACTO</a></li>
+                <li class="menu-header__nav-link home-button">HOME</li>
+                <li class="menu-header__nav-link instructions-button">INSTRUCCIONES</li>
+                <li class="menu-header__nav-link contact-button">CONTACTO</li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="buttons">
+        <section id="option-buttons">
             <button class="button1">TIRADA DE ÚNICA CARTA</button>
             <button class="button2">TIRADA DE 3 CARTAS</button>
             <button class="button3">TIRADA DE CINCO CARTAS</button>
@@ -33,7 +33,6 @@
 				<h1>TIRADA DE ÚNICA CARTA</h1>
 
 				<fieldset>
-					<legend>DATOS BÁSICOS</legend>
 					<div id="option1__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date">
@@ -48,7 +47,7 @@
 				</div>
 			</form>
 
-            <button id="close-button-1">x</button>
+            <button id="close-button-1" class="close-button">x</button>
         </section>
 
         <section id="option2" class="hidden">
@@ -56,7 +55,6 @@
 				<h1>TIRADA DE 3 CARTAS</h1>
 
 				<fieldset>
-					<legend>DATOS BÁSICOS</legend>
 					<div id="option2__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date">
@@ -71,7 +69,7 @@
 				</div>
 			</form>
 
-            <button id="close-button-2">x</button>
+            <button id="close-button-2" class="close-button">x</button>
         </section>
 
         <section id="option3" class="hidden">
@@ -79,7 +77,6 @@
 				<h1>TIRADA DE 5 CARTAS</h1>
 
 				<fieldset>
-					<legend>DATOS BÁSICOS</legend>
 					<div id="option3__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date">
@@ -94,12 +91,12 @@
 				</div>
 			</form>
 
-            <button id="close-button-3">x</button>
+            <button id="close-button-3" class="close-button">x</button>
         </section>
 
-        <section id="option1-result"></section>
-        <section id="option2-result"></section>
-        <section id="option3-result"></section>
+        <section id="overlay" class="hidden"></section>
+
+        <section id="option-result"></section>
     </main>
 
     <footer>
