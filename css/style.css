@@ -206,6 +206,13 @@ header {
 }
 
 /*MAIN*/
+main {
+    width: 100vw;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
 /*OPCIONES TIRADAS*/
 #option-buttons {
     width: 100vw;
@@ -292,9 +299,17 @@ header {
 
 /*CARD*/
 #option-result {
-    display: flex;
+    width: 100%;
+    max-width: 2000px;
 
-    margin-top: 3em;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    margin: 3em 10% 0;
+
+    position: relative;
 }
 #option-result.hidden {
     display: none;
@@ -307,8 +322,6 @@ header {
     flex-flow: row;
     gap: 1em;
     padding: 1em;
-
-    position: relative;
 }
 .card-img {
     width: 100%;
@@ -323,14 +336,26 @@ header {
     padding: 1em;
 }
 
-.card-title, .card-description {
+.card-text.hidden {
     display: none;
 }
-
-/* .card-title, .card-description {
+.card-text.active {
+    width: 100%;
     position: absolute;
+    top: 100%;
+    padding: 1em 10%;
+
     display: flex;
     flex-flow: column;
     gap: 1em;
-} */
+}
+.card-text .card-title {
+    font-family: var(--main-font);
+    font-size: 3rem;
+
+    text-align: center;
+}
+.card-text .card-description {
+    font-size: 1.2rem;
+}
 /*FOOTER*/

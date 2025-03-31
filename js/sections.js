@@ -1,5 +1,3 @@
-import { options } from "./forms.js";
-
 // VARIABLES SECCIONES
 const homeButton = document.querySelector(".home-button");
 const home = document.getElementById("option-buttons");
@@ -16,6 +14,7 @@ function displayHome() {
     instructions.classList.replace("active", "hidden");
     contact.classList.replace("active", "hidden");
     optionResult.classList.replace("active", "hidden");
+    optionResult.innerHTML = "";
 }
 homeButton.addEventListener("click", displayHome);
 
@@ -27,6 +26,7 @@ function displayInstructions() {
     contact.classList.replace("active", "hidden");
 
     optionResult.classList.replace("active", "hidden");
+    optionResult.innerHTML = "";
 }
 instructionsButton.addEventListener("click", displayInstructions);
 
@@ -38,7 +38,7 @@ function displayContact() {
     home.classList.replace("active", "hidden");
 
     optionResult.classList.replace("active", "hidden");
-    console.log(optionResult)
+    optionResult.innerHTML = "";
 }
 contactButton.addEventListener("click", displayContact);
 
