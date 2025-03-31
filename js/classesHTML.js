@@ -24,8 +24,8 @@ class CardHTML extends Card {
         cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
         cardImg.setAttribute("loading", "lazy");
-        cardTitle.innerHTML = "";
-        cardDescription.innerHTML = "";
+        cardTitle.textContent = "";
+        cardDescription.textContent = "";
 
         card.appendChild(cardImg);
 
@@ -34,10 +34,23 @@ class CardHTML extends Card {
 
         // FUNCION DISPLAY TEXTO CARD
         cardImg.addEventListener("click", () => {
-            cardTitle.textContent = this.name;
             cardDescription.textContent = this.desc;
 
             cardText.classList.replace("hidden", "active");
+
+            let cardTitleSplit = this.name.split("");
+            let i = 0;
+            cardTitle.textContent = "";
+
+            function typingEffect() {
+                if (i < cardTitleSplit.length) {
+                    cardTitle.textContent += cardTitleSplit[i]; // Agregar una letra a la vez
+                    i++;
+                    setTimeout(typingEffect, 100); // Controla la velocidad de escritura
+                }
+            }
+
+            typingEffect();
         })
     }
 }
