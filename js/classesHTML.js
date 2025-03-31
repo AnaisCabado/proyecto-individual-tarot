@@ -1,4 +1,5 @@
 import { Card } from "./classes.js";
+import { option1, option2, option3 } from "./forms.js";
 
 class CardHTML extends Card {
     constructor(type, name_short, name, value_int, meaning_up, meaning_rev, desc) {
@@ -13,8 +14,11 @@ class CardHTML extends Card {
         card.classList.add("card");
 
         const cardImg = document.createElement("img");
+        cardImg.classList.add("card-img")
         const cardTitle = document.createElement("h4");
+        cardTitle.classList.add("card-title");
         const cardDescription = document.createElement("p");
+        cardDescription.classList.add("card-description");
 
         cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
@@ -25,6 +29,8 @@ class CardHTML extends Card {
         card.append(cardImg, cardTitle, cardDescription);
 
         optionResult.appendChild(card);
+
+        option1.classList.replace("active", "hidden")
     }
 }
 

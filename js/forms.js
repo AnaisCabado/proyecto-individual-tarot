@@ -33,6 +33,9 @@ closeButton1.addEventListener("click", closeOption1);
 
 const option1Submit = document.querySelector(".option1__submit");
 async function oneCard() {
+    if(!checkFields("option1")) {
+        return;
+    }
     let cardData = await fetchData();
     let cardAttributes = cardData.cards[0];
     let displayCard = new CardHTML(
@@ -44,6 +47,9 @@ async function oneCard() {
         cardAttributes.meaning_rev,
         cardAttributes.desc
     )
+
+    option1.classList.replace("active", "hidden");
+    overlay.classList.replace("active", "hidden");
 }
 option1Submit.addEventListener("click", oneCard);
 
@@ -69,6 +75,9 @@ closeButton2.addEventListener("click", closeOption2);
 
 const option2Submit = document.querySelector(".option2__submit");
 async function threeCard() {
+    if(!checkFields("option2")) {
+        return;
+    }
     let cardData = await fetchData();
     for (let i = 0; i < 3; i++) {
         let cardAttributes = cardData.cards[i];
@@ -82,6 +91,9 @@ async function threeCard() {
             cardAttributes.desc
         )
     }
+
+    option2.classList.replace("active", "hidden");
+    overlay.classList.replace("active", "hidden");
 }
 option2Submit.addEventListener("click", threeCard);
 
@@ -106,6 +118,7 @@ closeButton3.addEventListener("click", closeOption3);
 
 const option3Submit = document.querySelector(".option3__submit");
 async function fiveCard() {
+    console.log("This is the five");
     let cardData = await fetchData();
     for (let i = 0; i < 5; i++) {
         let cardAttributes = cardData.cards[i];
@@ -122,9 +135,31 @@ async function fiveCard() {
 }
 option3Submit.addEventListener("click", fiveCard);
 
+const form1 = document.getElementById("option1__form");
+const form2 = document.getElementById("option2__form");
+const form3 = document.getElementById("option3__form");
+function checkFields(formId) {
+    console.log(formId);
+    const formHTML = document.querySelector('#'+formId+"__form");
+    console.log(formHTML);
+    if(formHTML.querySelector("#name").value == "") {
+        return false;
+    }
+    if(formHTML.querySelector("#date").value == "") {
+        return false;
+    }
+    if(formHTML.querySelector("#ascendent-sign").value == "") {
+        return false;
+    }
+    if(formHTML.querySelector("#descendent-sign").value == "") {
+        return false;
+    }
+
+    return true;
+}
 
 export {
     cardOption1, closeButton1,
     cardOption2, closeButton2,
-    cardOption3, closeButton3
+    cardOption3, closeButton3,
 }

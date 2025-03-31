@@ -15,8 +15,8 @@
 
             <ul class="menu-header__nav">
                 <li class="menu-header__nav-link home-button">HOME</li>
-                <li class="menu-header__nav-link instructions-button">INSTRUCCIONES</li>
-                <li class="menu-header__nav-link contact-button">CONTACTO</li>
+                <li class="menu-header__nav-link instructions-button">INSTRUCTIONS</li>
+                <li class="menu-header__nav-link contact-button">CONTACT</li>
             </ul>
         </nav>
     </header>
@@ -29,21 +29,21 @@
         </section>
 
         <section id="option1" class="hidden">
-            <form id="option1__form">
+            <form id="option1__form" onsubmit="return false;">
 				<h1>TIRADA DE ÚNICA CARTA</h1>
 
 				<fieldset>
 					<div id="option1__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
-                        <input type="date">
+                        <input type="date" id="date">
 						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
                         <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
-                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
+                        <input type="textarea" id="yes-no-question" name="question" placeholder="Escribe tu pregunta de sí o no">
 					</div>
 				</fieldset>
 				
 				<div id="option1__form-buttons">
-					<button type="submit" class="option1__submit">TIRADA DE CARTAS</button>
+					<button class="option1__submit">TIRADA DE CARTAS</button>
 				</div>
 			</form>
 
@@ -51,16 +51,16 @@
         </section>
 
         <section id="option2" class="hidden">
-            <form id="option2__form">
+            <form id="option2__form" onsubmit="return false;">
 				<h1>TIRADA DE 3 CARTAS</h1>
 
 				<fieldset>
-					<div id="option2__form-questions">
+					<div id="option2__form-questions" >
 						<input type="text" id="name" name="name" required placeholder="Nombre">
-                        <input type="date">
+                        <input type="date" id="date">
 						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
                         <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
-                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
+                        <input type="textarea" id="yes-no-question" name="question" placeholder="Escribe tu pregunta de sí o no">
 					</div>
 				</fieldset>
 				
@@ -73,13 +73,13 @@
         </section>
 
         <section id="option3" class="hidden">
-            <form id="option3__form">
+            <form id="option3__form" onsubmit="return false;">
 				<h1>TIRADA DE 5 CARTAS</h1>
 
 				<fieldset>
 					<div id="option3__form-questions">
 						<input type="text" id="name" name="name" required placeholder="Nombre">
-                        <input type="date">
+                        <input type="date" id="date">
 						<input type="select" id="ascendent-sign" name="ascendent-sign" required placeholder="Signo ascendente">
                         <input type="select" id="descendent-sign" name="descendent-sign" required placeholder="Signo descendente">
                         <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">

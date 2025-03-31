@@ -9,4 +9,4 @@ const home = document.getElementById("option-buttons");
 function displayHome() {
     home.classList.add("active");
 }
-homeButton.addEventListener("click", displayHome)
+homeButton.addEventListener("click", displayHome);

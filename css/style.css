@@ -249,5 +249,32 @@ header {
 /*FORMULARIO TIRADA 2*/
 /*FORMULARIO TIRADA 3*/
 /*CARD*/
+#option-result {
+    display: flex;
+}
+.card {
+    width: 100%;
+    max-width: 250px;
 
+    display: flex;
+    flex-flow: row;
+    gap: 1em;
+    padding: 1em;
+}
+.card-img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    
+    background-color: var(--main-color-30);
+
+    border: 2px solid var(--main-color-10);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.card-title, .card-description {
+    display: none;
+}
 /*FOOTER*/
