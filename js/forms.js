@@ -2,6 +2,8 @@ import { fetchData } from "./api.js";
 import { CardHTML } from "./classesHTML.js";
 
 // VARIABLES OPCIONES TIRADAS
+const options = document.getElementById("option-buttons");
+
 const button1 = document.querySelector(".button1");
 const option1 = document.getElementById("option1");
 
@@ -12,6 +14,8 @@ const button3 = document.querySelector(".button3");
 const option3 = document.getElementById("option3");
 
 const overlay = document.getElementById("overlay");
+
+const optionResult = document.getElementById("option-result");
 
 // CAMBIO DE CLASE PARA TIRADA OPCION 1 PARA VISUALIZAR Y ESCONDER FORMULARIO
 function cardOption1() {
@@ -48,8 +52,11 @@ async function oneCard() {
         cardAttributes.desc
     )
 
+    options.classList.replace("active", "hidden");
     option1.classList.replace("active", "hidden");
     overlay.classList.replace("active", "hidden");
+
+    optionResult.classList.replace("hidden", "active")
 }
 option1Submit.addEventListener("click", oneCard);
 
@@ -92,8 +99,11 @@ async function threeCard() {
         )
     }
 
+    options.classList.replace("active", "hidden");
     option2.classList.replace("active", "hidden");
     overlay.classList.replace("active", "hidden");
+
+    optionResult.classList.replace("hidden", "active")
 }
 option2Submit.addEventListener("click", threeCard);
 
@@ -118,7 +128,10 @@ closeButton3.addEventListener("click", closeOption3);
 
 const option3Submit = document.querySelector(".option3__submit");
 async function fiveCard() {
-    console.log("This is the five");
+    if(!checkFields("option2")) {
+        return;
+    }
+
     let cardData = await fetchData();
     for (let i = 0; i < 5; i++) {
         let cardAttributes = cardData.cards[i];
@@ -132,6 +145,12 @@ async function fiveCard() {
             cardAttributes.desc
         )
     }
+
+    options.classList.replace("active", "hidden");
+    option3.classList.replace("active", "hidden");
+    overlay.classList.replace("active", "hidden");
+
+    optionResult.classList.replace("hidden", "active")
 }
 option3Submit.addEventListener("click", fiveCard);
 
@@ -139,9 +158,7 @@ const form1 = document.getElementById("option1__form");
 const form2 = document.getElementById("option2__form");
 const form3 = document.getElementById("option3__form");
 function checkFields(formId) {
-    console.log(formId);
     const formHTML = document.querySelector('#'+formId+"__form");
-    console.log(formHTML);
     if(formHTML.querySelector("#name").value == "") {
         return false;
     }
@@ -162,4 +179,5 @@ export {
     cardOption1, closeButton1,
     cardOption2, closeButton2,
     cardOption3, closeButton3,
+    options,
 }

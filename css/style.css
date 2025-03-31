@@ -172,8 +172,18 @@ body {
 header {
     width: 100vw;
     height: 3em;
+
     background-color: var(--main-color-30);
+    color: var(--main-color-10);
+    font-family: var(--main-font);
+    font-size: 1rem;
+    font-weight: 600;
+    
     border-bottom: 2px solid var(--main-color-10);
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 #menu-header {
     width: 100%;
@@ -190,10 +200,41 @@ header {
     flex-flow: row;
     gap: 1em;
 }
+
+.menu-header__nav-link {
+    cursor: pointer;
+}
+
 /*MAIN*/
 /*OPCIONES TIRADAS*/
+#option-buttons {
+    width: 100vw;
+    height: 90vh;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+#option-buttons.hidden {
+    display: none;
+}
+#option-buttons button {
+    font-family: var(--main-font);
+    font-size: 1rem;
+    font-weight: 600;
+
+    background-color: var(--main-color-30);
+    border: 2px solid var(--main-color-10);
+    color: var(--main-color-10);
+
+    border-radius: 20px;
+    padding: .5em 1em;
+
+    cursor: pointer;
+}
 /*FORMULARIOS*/
-/*FORMULARIO TIRADA 1*/
 .hidden {
     display: none;
 }
@@ -230,10 +271,12 @@ header {
     width: 3em;
     height: 3em;
 
-    background-color: var(--main-color-10);
-    color: var(--main-color-30);
-    border: none;
+    background-color: var(--main-color-60);
+    color: var(--main-color-10);
+    border: 2px solid var(--main-color-10);
     border-radius: 100%;
+
+    cursor: pointer;
 }
 
 #overlay {
@@ -246,11 +289,15 @@ header {
     backdrop-filter: blur(10px);
     z-index: 0;
 }
-/*FORMULARIO TIRADA 2*/
-/*FORMULARIO TIRADA 3*/
+
 /*CARD*/
 #option-result {
     display: flex;
+
+    margin-top: 3em;
+}
+#option-result.hidden {
+    display: none;
 }
 .card {
     width: 100%;
@@ -260,6 +307,8 @@ header {
     flex-flow: row;
     gap: 1em;
     padding: 1em;
+
+    position: relative;
 }
 .card-img {
     width: 100%;
@@ -277,4 +326,11 @@ header {
 .card-title, .card-description {
     display: none;
 }
+
+/* .card-title, .card-description {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+} */
 /*FOOTER*/
