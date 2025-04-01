@@ -1,11 +1,18 @@
+
 // VARIABLES SECCIONES
 const homeButton = document.querySelector(".home-button");
 const home = document.getElementById("option-buttons");
+
 const instructionsButton = document.querySelector(".instructions-button")
 const instructions = document.getElementById("instructions");
+
 const contactButton = document.querySelector(".contact-button");
 const contact = document.getElementById("contact");
+
 const optionResult = document.getElementById("option-result");
+const cards = document.querySelector(".cards");
+const optionResultTitle = document.querySelector(".card-title");
+const optionResultDescription = document.querySelector(".card-description");
 
 // MOSTRAR SECCION HOME
 function displayHome() {
@@ -14,7 +21,9 @@ function displayHome() {
     instructions.classList.replace("active", "hidden");
     contact.classList.replace("active", "hidden");
     optionResult.classList.replace("active", "hidden");
-    optionResult.innerHTML = "";
+    cards.innerHTML = "";
+    optionResultTitle.textContent = "";
+    optionResultDescription.textContent = "";
 }
 homeButton.addEventListener("click", displayHome);
 
@@ -26,7 +35,9 @@ function displayInstructions() {
     contact.classList.replace("active", "hidden");
 
     optionResult.classList.replace("active", "hidden");
-    optionResult.innerHTML = "";
+    cards.innerHTML = "";
+    optionResultTitle.textContent = "";
+    optionResultDescription.textContent = "";
 }
 instructionsButton.addEventListener("click", displayInstructions);
 
@@ -38,7 +49,11 @@ function displayContact() {
     home.classList.replace("active", "hidden");
 
     optionResult.classList.replace("active", "hidden");
-    optionResult.innerHTML = "";
+    cards.innerHTML = "";
+    optionResultTitle.textContent = "";
+    optionResultDescription.textContent = "";
+
+    console.log(contact)
 }
 contactButton.addEventListener("click", displayContact);
 

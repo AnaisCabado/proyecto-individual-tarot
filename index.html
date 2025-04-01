@@ -97,6 +97,7 @@
         <section id="overlay" class="hidden"></section>
 
         <section id="option-result" class="hidden">
+            <div class="cards"></div>
             <div class="card-text hidden">
                 <h4 class="card-title"></h4>
                 <p class="card-description"></p>
@@ -105,7 +106,26 @@
 
 
         <section id="instructions"></section>
-        <section id="contact"></section>
+
+        <section id="contact" class="hidden">
+            <h1 class="contact-title">DO YOU WANT A PERSONAL READING?</h1>
+            <p class="contact-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem sunt ratione quidem tempore reprehenderit modi consequuntur accusantium aspernatur fuga. Unde totam reiciendis impedit reprehenderit veritatis nihil delectus quod consequuntur placeat voluptatibus! Velit omnis, rem, nesciunt nemo recusandae possimus expedita qui fuga, repellendus sint ratione odit ea exercitationem praesentium earum.</p>
+
+            <form id="contact-form">
+				<fieldset>
+					<div class = "contact-form__questions">
+						<input type="text" id="name" name="name" required placeholder="Nombre">
+                        <input type="text" id="surname" name="surname" required placeholder="Surname">
+                        <input type="date" id="date">
+						<input type="select" id="tarotista" name="tarotista" required placeholder="Elige tarotista"> <!-- TODO CAMBIAR IDIOMA -->
+					</div>
+				</fieldset>
+				
+				<div id="contact-form__buttons">
+					<button class="contact-form__submit">SOLICITAR CITA</button> <!-- TODO CAMBIAR IDIOMA -->
+				</div>
+			</form>
+        </section>
     </main>
 
     <footer>

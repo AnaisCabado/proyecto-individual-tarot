@@ -184,6 +184,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+
+    z-index: 0;
 }
 #menu-header {
     width: 100%;
@@ -310,9 +312,19 @@ main {
     margin: 3em 10% 0;
 
     position: relative;
+
+    z-index: -1;
 }
 #option-result.hidden {
     display: none;
+}
+.cards {
+    width: 100%;
+    max-width: 2000px;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 }
 .card {
     width: 100%;
@@ -348,14 +360,33 @@ main {
     display: flex;
     flex-flow: column;
     gap: 1em;
+
+    color: var(--main-color-10);
 }
-.card-text .card-title {
+.card-text.active .card-title {
     font-family: var(--main-font);
     font-size: 3rem;
 
     text-align: center;
 }
-.card-text .card-description {
+.card-text.active .card-description {
     font-size: 1.2rem;
+}
+
+
+/* CONTACT */
+#contact.hidden {
+    display: none;
+}
+
+#contact.active {
+    max-width: 2000px;
+
+    margin: 3em 10% 0;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 /*FOOTER*/

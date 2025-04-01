@@ -11,11 +11,13 @@ class CardHTML extends Card {
     initializeOptionHTML() {
         const optionResult = document.getElementById("option-result");
 
+        const cards = document.querySelector(".cards");
+
         const card = document.createElement("div");
         card.classList.add("card");
 
         cardImg = document.createElement("img");
-        cardImg.classList.add("card-img")
+        cardImg.classList.add("card-img");
 
         const cardText = document.querySelector(".card-text");
         const cardTitle = document.querySelector(".card-title");
@@ -24,33 +26,34 @@ class CardHTML extends Card {
         cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
         cardImg.setAttribute("loading", "lazy");
-        cardTitle.textContent = "";
-        cardDescription.textContent = "";
 
         card.appendChild(cardImg);
 
-        optionResult.appendChild(card);
+        cards.append(card);
+        
+        optionResult.appendChild(cards);
 
 
         // FUNCION DISPLAY TEXTO CARD
         cardImg.addEventListener("click", () => {
-            cardDescription.textContent = this.desc;
-
             cardText.classList.replace("hidden", "active");
+
+            cardTitle.textContent = "";
+            cardDescription.textContent = "";
 
             let cardTitleSplit = this.name.split("");
             let i = 0;
-            cardTitle.textContent = "";
 
             function typingEffect() {
                 if (i < cardTitleSplit.length) {
-                    cardTitle.textContent += cardTitleSplit[i]; // Agregar una letra a la vez
+                    cardTitle.textContent += cardTitleSplit[i];
                     i++;
-                    setTimeout(typingEffect, 100); // Controla la velocidad de escritura
+                    setTimeout(typingEffect, 100);
                 }
             }
-
             typingEffect();
+
+            cardDescription.textContent = this.desc;
         })
     }
 }
