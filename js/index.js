@@ -6,4 +6,4 @@ import { CardHTML } from "./classesHTML.js";
 
 import { displayHome, displayInstructions, displayContact } from "./sections.js";
 
-import { typeEffect } from "./functions.js";
+import { formToLocalStorage } from "./localstorage.js";

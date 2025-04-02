@@ -19,9 +19,9 @@ class CardHTML extends Card {
         cardImg = document.createElement("img");
         cardImg.classList.add("card-img");
 
-        const cardText = document.querySelector(".card-text");
-        const cardTitle = document.querySelector(".card-title");
-        const cardDescription = document.querySelector(".card-description");
+        let cardText = document.querySelector(".card-text");
+        let cardTitle = document.querySelector(".card-title");
+        let cardDescription = document.querySelector(".card-description");
 
         cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
@@ -32,6 +32,10 @@ class CardHTML extends Card {
         cards.append(card);
         
         optionResult.appendChild(cards);
+
+        card.addEventListener("click", () => {
+            console.log("casa")
+        })
 
 
         // FUNCION DISPLAY TEXTO CARD
