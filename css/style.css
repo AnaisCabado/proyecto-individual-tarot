@@ -1,6 +1,5 @@
 /*RESET*/
-@import url('https://fonts.googleapis.com/css2?family=Liter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -144,23 +143,23 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--main-color-60);
-    font-family: var(--main-font);
 }
 /*END RESET*/
 
 /*VARIABLES*/
 :root {
-    --main-font: 'Times New Roman', Times, serif;
+    --main-font: "Cinzel Decorative", serif;
+    --second-font: "Lora", serif;
     /* FUENTE PRINCIPAL DE LA PAGINA */
-    --main-font-weight: 400;
+    --main-font-weight: 700;
     /* PESO PRINCIPAL DE CARACTERES */
     --main-font-size: 16px;
     /* TAMAÑO PRINCIPAL DE CARACTERES */
-    --main-color-60: #e6fffc;
+    --main-color-60: #2B1736;
     /* MAIN COLOR 60 */
-    --main-color-30: #ffd9ee;
+    --main-color-30: #B49B5E;
     /* MAIN COLOR 30 */
-    --main-color-10: #b64b92;
+    --main-color-10: white;
     /* MAIN COLOR 10 */
     --main-border: 1px solid transparent;
     /* BORDE GENERAL PARA ELEMENTOS */
@@ -173,13 +172,13 @@ header {
     width: 100vw;
     height: 3em;
 
-    background-color: var(--main-color-30);
-    color: var(--main-color-10);
+    background-color: black;
+    color: var(--main-color-30);
     font-family: var(--main-font);
     font-size: 1rem;
     font-weight: 600;
     
-    border-bottom: 2px solid var(--main-color-10);
+    border-bottom: 2px solid black;
 
     position: fixed;
     top: 0;
@@ -208,12 +207,36 @@ header {
 }
 
 /*MAIN*/
+h1 {
+    font-family: var(--main-font);
+    font-size: 3rem;
+    font-weight: var(--main-font-weight);
+
+    text-align: center;
+}
+h2 {
+    font-family: var(--main-font);
+    font-size: 2.5rem;
+    font-weight: var(--main-font-weight);
+    text-align: center;
+}
+p {
+    font-family: var(--second-font);
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    text-align: center;
+}
 main {
     width: 100vw;
+    min-height: 100vh;
+    margin-top: 3em;
 
     display: flex;
     flex-flow: column;
     align-items: center;
+
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 /*OPCIONES TIRADAS*/
 #option-buttons {
@@ -235,13 +258,21 @@ main {
     font-weight: 600;
 
     background-color: var(--main-color-30);
-    border: 2px solid var(--main-color-10);
-    color: var(--main-color-10);
+    border: 2px solid black;
+    color: black;
 
     border-radius: 20px;
     padding: .5em 1em;
 
     cursor: pointer;
+
+    transition: all .3s ease;
+}
+#option-buttons button:hover {
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
+    scale: 110%;
 }
 /*FORMULARIOS*/
 .hidden {
@@ -258,9 +289,9 @@ main {
 
     padding: 1em;
 
-    background-color: var(--main-color-30);
-    color: var(--main-color-10);
-    border: 2px solid var(--main-color-10);
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
     border-radius: 20px;
 
     text-align: center;
@@ -272,6 +303,51 @@ main {
     z-index: 2;
 }
 
+#option1__form, #option2__form, #option3__form {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+}
+
+#option1__form-questions, #option2__form-questions, #option3__form-questions {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: .5em;
+}
+#option1__form-questions input, #option2__form-questions input, #option3__form-questions input, 
+#option1__form-questions select, #option2__form-questions select, #option3__form-questions select {
+    width: 100%;
+    max-width: 200px;
+
+    background-color: black;
+    border: 2px solid var(--main-color-30);
+    color: var(--main-color-30);
+    border-radius: 20px;
+
+    font-family: var(--second-font);
+    font-size: 1rem;
+    padding: .5em 1em;
+}
+.option1__submit, .option2__submit, .option3__submit {
+    background-color: var(--main-color-30);
+    border: 2px solid black;
+    color: black;
+    border-radius: 20px;
+
+    font-family: var(--main-font);
+    font-size: 1rem;
+    font-weight: var(--main-font-weight);
+    padding: .5em 1em;
+
+    transition: all .3s ease;
+}
+.option1__submit:hover, .option2__submit:hover, .option3__submit:hover {
+    background-color: black;
+    border: 2px solid var(--main-color-30);
+    color: var(--main-color-30);
+}
+
 .close-button {
     position: absolute;
     right: 1em;
@@ -280,12 +356,19 @@ main {
     width: 3em;
     height: 3em;
 
-    background-color: var(--main-color-60);
-    color: var(--main-color-10);
-    border: 2px solid var(--main-color-10);
+    background-color: var(--main-color-30);
+    color: black;
+    border: 2px solid black;
     border-radius: 100%;
 
     cursor: pointer;
+
+    transition: all .3s ease;
+}
+.close-button:hover {
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
 }
 
 #overlay {
@@ -304,12 +387,12 @@ main {
     width: 100%;
     max-width: 2000px;
 
-
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: center;
 
-    margin: 3em 10% 0;
+    margin: 3em 10%;
 
     position: relative;
 
@@ -323,8 +406,11 @@ main {
     max-width: 2000px;
 
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
+
+    gap: 1em;
+    padding: 1em;
 }
 .card {
     width: 100%;
@@ -333,19 +419,26 @@ main {
     display: flex;
     flex-flow: row;
     gap: 1em;
+
+    background-color: black;
+
+    border: 2px solid var(--main-color-30);
+    border-radius: 20px;
     padding: 1em;
+
+    position: relative;
 }
+
 .card-img {
     width: 100%;
     height: auto;
 
     object-fit: contain;
-    
-    background-color: var(--main-color-30);
 
-    border: 2px solid var(--main-color-10);
-    border-radius: 20px;
-    padding: 1em;
+    border: 2px solid var(--main-color-30);
+    border-radius: 10px;
+
+    transition: opacity 0.8s ease-in-out;
 }
 
 .card-text.hidden {
@@ -353,24 +446,28 @@ main {
 }
 .card-text.active {
     width: 100%;
-    position: absolute;
     top: 100%;
     padding: 1em 10%;
+    position: absolute;
 
     display: flex;
     flex-flow: column;
     gap: 1em;
 
-    color: var(--main-color-10);
+    color: var(--main-color-30);
 }
 .card-text.active .card-title {
     font-family: var(--main-font);
     font-size: 3rem;
+    font-weight: var(--main-font-weight);
 
     text-align: center;
 }
 .card-text.active .card-description {
     font-size: 1.2rem;
+    text-align: center;
+
+    transition: opacity 0.8s ease-out;
 }
 
 
@@ -388,5 +485,88 @@ main {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    gap: 1em;
+
+    color: var(--main-color-30);
 }
+
+.contact__form-section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1em;
+}
+
+#contact__form {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 3em;
+
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
+    border-radius: 20px;
+    padding: 3em;
+}
+
+#contact__form .contact__form-questions {
+    display: flex;
+    flex-flow: row;
+    gap: .5em;
+}
+
+.contact__form-questions input, .contact__form-questions select {
+    background-color: black;
+    border: 2px solid var(--main-color-30);
+    border-radius: 20px;
+    color: var(--main-color-30);
+    font-family: var(--second-font);
+    font-size: 1rem;
+    padding: .5em 1em;
+}
+
+.contact__form-submit {
+    background-color: var(--main-color-30);
+    color: black;
+    border: 2px solid black;
+    border-radius: 15px;
+
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: 1rem;
+
+    padding: .5em 1em;
+
+    transition: all .3s ease;
+}
+.contact__form-submit:hover {
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
+}
+
+.contact-date {
+    background-color: black;
+    color: var(--main-color-30);
+    border: 2px solid var(--main-color-30);
+    border-radius: 20px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 2em;
+}
+
 /*FOOTER*/
+footer {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    background-color: black;
+    color: var(--main-color-30);
+}

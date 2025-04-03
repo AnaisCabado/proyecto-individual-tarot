@@ -16,13 +16,14 @@ class CardHTML extends Card {
         const card = document.createElement("div");
         card.classList.add("card");
 
-        cardImg = document.createElement("img");
+        const cardImg = document.createElement("img");
         cardImg.classList.add("card-img");
 
         let cardText = document.querySelector(".card-text");
         let cardTitle = document.querySelector(".card-title");
         let cardDescription = document.querySelector(".card-description");
 
+        cardImg.style.opacity = "0";
         cardImg.setAttribute("src", `./assets/${this.name.toLowerCase().replaceAll(" ", "")}.jpeg`);
         cardImg.setAttribute("alt", this.name);
         cardImg.setAttribute("loading", "lazy");
@@ -33,17 +34,16 @@ class CardHTML extends Card {
         
         optionResult.appendChild(cards);
 
+        // FUNCION DISPLAY IMG CARD
         card.addEventListener("click", () => {
-            console.log("casa")
+            cardImg.style.opacity = "1";
         })
-
-
         // FUNCION DISPLAY TEXTO CARD
         cardImg.addEventListener("click", () => {
             cardText.classList.replace("hidden", "active");
 
             cardTitle.textContent = "";
-            cardDescription.textContent = "";
+            cardDescription.style.opacity = "0"; 
 
             let cardTitleSplit = this.name.split("");
             let i = 0;
@@ -53,6 +53,10 @@ class CardHTML extends Card {
                     cardTitle.textContent += cardTitleSplit[i];
                     i++;
                     setTimeout(typingEffect, 100);
+                } else {
+                    setTimeout(() => {
+                        cardDescription.style.opacity = "1";
+                    }, 500);
                 }
             }
             typingEffect();

@@ -52,8 +52,6 @@ function displayContact() {
     cards.innerHTML = "";
     optionResultTitle.textContent = "";
     optionResultDescription.textContent = "";
-
-    console.log(contact)
 }
 contactButton.addEventListener("click", displayContact);
 

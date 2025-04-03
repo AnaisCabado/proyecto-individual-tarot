@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <link rel="stylesheet" href="./css/style.css">
     <script defer type="module" src="./js/index.js"></script>
 </head>
+
 <body>
     <header>
         <nav id="menu-header">
@@ -30,11 +32,11 @@
 
         <section id="option1" class="hidden">
             <form id="option1__form" onsubmit="return false;">
-				<h1>TIRADA DE ÚNICA CARTA</h1>
+                <h1>SINGLE CARD READING</h1>
 
-				<fieldset>
-					<div id="option1__form-questions">
-						<input type="text" id="name" name="name" required placeholder="Nombre">
+                <fieldset>
+                    <div id="option1__form-questions">
+                        <input type="text" id="name" name="name" required placeholder="Nombre">
 
                         <input type="date" id="date">
 
@@ -69,28 +71,29 @@
                             <option value="aquarius">Aquarius</option>
                             <option value="pisces">Pisces</option>
                         </select>
-                        
-                        <input type="textarea" id="yes-no-question" name="question" placeholder="Escribe tu pregunta de sí o no">
-					</div>
-				</fieldset>
-				
-				<div id="option1__form-buttons">
-					<button class="option1__submit">TIRADA DE CARTAS</button>
-				</div>
-			</form>
+
+                        <input type="textarea" id="yes-no-question" name="question"
+                            placeholder="Escribe tu pregunta de sí o no">
+                    </div>
+                </fieldset>
+
+                <div id="option1__form-buttons">
+                    <button class="option1__submit">START READING</button>
+                </div>
+            </form>
 
             <button id="close-button-1" class="close-button">x</button>
         </section>
 
         <section id="option2" class="hidden">
             <form id="option2__form" onsubmit="return false;">
-				<h1>TIRADA DE 3 CARTAS</h1>
+                <h1>THREE CARDS READING</h1>
 
-				<fieldset>
-					<div id="option2__form-questions" >
-						<input type="text" id="name" name="name" required placeholder="Nombre">
+                <fieldset>
+                    <div id="option2__form-questions">
+                        <input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date" id="date">
-						<label for="ascendent-sign">Ascendent Sign</label>
+                        <label for="ascendent-sign">Ascendent Sign</label>
                         <select name="ascendent-sign" id="ascendent-sign" required>
                             <option value="aries">Aries</option>
                             <option value="taurus">Taurus</option>
@@ -121,27 +124,28 @@
                             <option value="aquarius">Aquarius</option>
                             <option value="pisces">Pisces</option>
                         </select>
-                        <input type="textarea" id="yes-no-question" name="question" placeholder="Escribe tu pregunta de sí o no">
-					</div>
-				</fieldset>
-				
-				<div id="option2__form-buttons">
-					<button type="submit" class="option2__submit">TIRADA DE CARTAS</button>
-				</div>
-			</form>
+                        <input type="textarea" id="yes-no-question" name="question"
+                            placeholder="Escribe tu pregunta de sí o no">
+                    </div>
+                </fieldset>
+
+                <div id="option2__form-buttons">
+                    <button type="submit" class="option2__submit">TIRADA DE CARTAS</button>
+                </div>
+            </form>
 
             <button id="close-button-2" class="close-button">x</button>
         </section>
 
         <section id="option3" class="hidden">
             <form id="option3__form" onsubmit="return false;">
-				<h1>TIRADA DE 5 CARTAS</h1>
+                <h1>FIVE CARDS READING</h1>
 
-				<fieldset>
-					<div id="option3__form-questions">
-						<input type="text" id="name" name="name" required placeholder="Nombre">
+                <fieldset>
+                    <div id="option3__form-questions">
+                        <input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date" id="date">
-						<label for="ascendent-sign">Ascendent Sign</label>
+                        <label for="ascendent-sign">Ascendent Sign</label>
                         <select name="ascendent-sign" id="ascendent-sign" required>
                             <option value="aries">Aries</option>
                             <option value="taurus">Taurus</option>
@@ -172,14 +176,15 @@
                             <option value="aquarius">Aquarius</option>
                             <option value="pisces">Pisces</option>
                         </select>
-                        <input type="textarea" id="yes-no-question" name="question" required placeholder="Escribe tu pregunta de sí o no">
-					</div>
-				</fieldset>
-				
-				<div id="option3__form-buttons">
-					<button type="submit" class="option3__submit">TIRADA DE CARTAS</button>
-				</div>
-			</form>
+                        <input type="textarea" id="yes-no-question" name="question" required
+                            placeholder="Escribe tu pregunta de sí o no">
+                    </div>
+                </fieldset>
+
+                <div id="option3__form-buttons">
+                    <button type="submit" class="option3__submit">TIRADA DE CARTAS</button>
+                </div>
+            </form>
 
             <button id="close-button-3" class="close-button">x</button>
         </section>
@@ -187,7 +192,13 @@
         <section id="overlay" class="hidden"></section>
 
         <section id="option-result" class="hidden">
-            <div class="cards"></div>
+            <div class="cards">
+                <!-- <div class="option2-cards-text">
+                    <p>PAST</p>
+                    <p>PRESENT</p>
+                    <p>FUTURE</p>
+                </div> -->
+            </div>
             <div class="card-text hidden">
                 <h4 class="card-title"></h4>
                 <p class="card-description"></p>
@@ -198,28 +209,47 @@
         <section id="instructions"></section>
 
         <section id="contact" class="hidden">
-            <h1 class="contact-title">DO YOU WANT A PERSONAL READING?</h1>
-            <p class="contact-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem sunt ratione quidem tempore reprehenderit modi consequuntur accusantium aspernatur fuga. Unde totam reiciendis impedit reprehenderit veritatis nihil delectus quod consequuntur placeat voluptatibus! Velit omnis, rem, nesciunt nemo recusandae possimus expedita qui fuga, repellendus sint ratione odit ea exercitationem praesentium earum.</p>
+            <div class="contact__form-section">
+                <h1 class="contact-title">DO YOU WANT A PERSONAL READING?</h1>
+                <p class="contact-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem sunt ratione
+                    quidem tempore reprehenderit modi consequuntur accusantium aspernatur fuga. Unde totam reiciendis
+                    impedit reprehenderit veritatis nihil delectus quod consequuntur placeat voluptatibus! Velit omnis,
+                    rem, nesciunt nemo recusandae possimus expedita qui fuga, repellendus sint ratione odit ea
+                    exercitationem praesentium earum.</p>
 
-            <form id="contact-form" onsubmit="return false;">
-				<fieldset>
-					<div class = "contact-form__questions">
-						<input type="text" id="name" name="name" required placeholder="Nombre">
-                        <input type="text" id="surname" name="surname" required placeholder="Surname">
-                        <input type="date" id="date">
-						<input type="select" id="tarotista" name="tarotista" required placeholder="Elige tarotista"> <!-- TODO CAMBIAR IDIOMA -->
-					</div>
-				</fieldset>
-				
-				<div id="contact-form__buttons">
-					<button class="contact-form__submit">SOLICITAR CITA</button> <!-- TODO CAMBIAR IDIOMA -->
-				</div>
-			</form>
+                <form id="contact__form" onsubmit="return false;">
+                    <h2>CHOOSE YOUR SESSION</h2>
+                    <fieldset>
+                        <div class="contact__form-questions">
+                            <input type="text" id="name" name="name" required placeholder="Nombre">
+                            <input type="text" id="surname" name="surname" required placeholder="Surname">
+                            <input type="date" id="date">
+                            <label for="tarot-specialist">Choose a tarot specialist:</label>
+                            <select name="tarot-specialist" id="tarot-specialist" required>
+                                <option value="Esperanza Gracia">Esperanza Gracia</option>
+                                <option value="Rappel">Rappel</option>
+                                <option value="Maestro Joao">Maestro Joao</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <div id="contact-form__buttons">
+                        <button class="contact__form-submit">ASK FOR SESSION</button> <!-- TODO CAMBIAR IDIOMA -->
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact__dates">
+                <div class="contact__dates-text">
+                    <h2 class="contact__dates-title">YOUR SESSIONS</h2>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        
+        <p>Lorem, ipsum dolor sit amet</p>
     </footer>
 </body>
+
 </html>
