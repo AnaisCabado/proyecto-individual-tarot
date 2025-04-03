@@ -13,26 +13,42 @@
 <body>
     <header>
         <nav id="menu-header">
-            <img src="" alt="logotipo" class="menu-header__logo" loading="lazy">
+            <p id="logo" class="logotipo">TAROTO</p>
 
-            <ul class="menu-header__nav">
-                <li class="menu-header__nav-link home-button">HOME</li>
-                <li class="menu-header__nav-link instructions-button">INSTRUCTIONS</li>
-                <li class="menu-header__nav-link contact-button">CONTACT</li>
-            </ul>
+            <div class="menu__burger">
+                <ul class="menu__burger-links" id="nav-apartados">
+                    <li class="home-button">HOME</li>
+                    <li class="instructions-button">INSTRUCTIONS</li>
+                    <li class="contact-button">CONTACT</li>
+                </ul>
+
+                <div class="menu__burger-icon" id="burger_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="option-buttons" class="active">
-            <button class="button1">SINGLE CARD READING</button>
-            <button class="button2">THREE CARDS READING</button>
-            <button class="button3">FIVE CARDS READING</button>
+            <h1>UNLOCK THE WISDOM OF THE CARDS, YOUR JOURNEY BEGINS HERE</h1>
+
+            <div class="buttons">
+                <button class="button1">SINGLE CARD READING</button>
+                <button class="button2">THREE CARDS READING</button>
+                <button class="button3">FIVE CARDS READING</button>
+            </div>
         </section>
 
         <section id="option1" class="hidden">
             <form id="option1__form" onsubmit="return false;">
                 <h1>SINGLE CARD READING</h1>
+                <p>This is a simple and quick method, ideal for daily insight or answering a straightforward question.
+                </p>
 
                 <fieldset>
                     <div id="option1__form-questions">
@@ -40,40 +56,42 @@
 
                         <input type="date" id="date">
 
-                        <label for="ascendent-sign">Ascendent Sign</label>
-                        <select name="ascendent-sign" id="ascendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
+                        <div class="form-questions-select">
+                            <label for="ascendent-sign">Ascendent Sign</label>
+                            <select name="ascendent-sign" id="ascendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
 
-                        <label for="descendent-sign">Descendent Sign</label>
-                        <select name="descendent-sign" id="descendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
+                        <div class="form-questions-select">
+                            <label for="descendent-sign">Descendent Sign</label>
+                            <select name="descendent-sign" id="descendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
 
-                        <input type="textarea" id="yes-no-question" name="question"
-                            placeholder="Escribe tu pregunta de sí o no">
                     </div>
                 </fieldset>
 
@@ -82,50 +100,59 @@
                 </div>
             </form>
 
-            <button id="close-button-1" class="close-button">x</button>
+            <button id="close-button-1" class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
         </section>
 
         <section id="option2" class="hidden">
             <form id="option2__form" onsubmit="return false;">
                 <h1>THREE CARDS READING</h1>
+                <p>A versatile spread that provides more depth than a single-card pull.</p>
 
                 <fieldset>
                     <div id="option2__form-questions">
                         <input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date" id="date">
-                        <label for="ascendent-sign">Ascendent Sign</label>
-                        <select name="ascendent-sign" id="ascendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
+                        <div class="form-questions-select">
+                            <label for="ascendent-sign">Ascendent Sign</label>
+                            <select name="ascendent-sign" id="ascendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
 
-                        <label for="descendent-sign">Descendent Sign</label>
-                        <select name="descendent-sign" id="descendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
-                        <input type="textarea" id="yes-no-question" name="question"
-                            placeholder="Escribe tu pregunta de sí o no">
+                        <div class="form-questions-select">
+                            <label for="descendent-sign">Descendent Sign</label>
+                            <select name="descendent-sign" id="descendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
                     </div>
                 </fieldset>
 
@@ -134,50 +161,58 @@
                 </div>
             </form>
 
-            <button id="close-button-2" class="close-button">x</button>
+            <button id="close-button-2" class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
         </section>
 
         <section id="option3" class="hidden">
             <form id="option3__form" onsubmit="return false;">
                 <h1>FIVE CARDS READING</h1>
+                <p>Provides a more detailed reading, often used for complex situations.</p>
 
                 <fieldset>
                     <div id="option3__form-questions">
                         <input type="text" id="name" name="name" required placeholder="Nombre">
                         <input type="date" id="date">
-                        <label for="ascendent-sign">Ascendent Sign</label>
-                        <select name="ascendent-sign" id="ascendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
+                        <div class="form-questions-select"><label for="ascendent-sign">Ascendent Sign</label>
+                            <select name="ascendent-sign" id="ascendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
 
-                        <label for="descendent-sign">Descendent Sign</label>
-                        <select name="descendent-sign" id="descendent-sign" required>
-                            <option value="aries">Aries</option>
-                            <option value="taurus">Taurus</option>
-                            <option value="gemini">Gemini</option>
-                            <option value="cancer">Cancer</option>
-                            <option value="leo">Leo</option>
-                            <option value="virgo">Virgo</option>
-                            <option value="libra">Libra</option>
-                            <option value="scorpio">Scorpio</option>
-                            <option value="sagittarius">Sagittarius</option>
-                            <option value="capricorn">Capricorn</option>
-                            <option value="aquarius">Aquarius</option>
-                            <option value="pisces">Pisces</option>
-                        </select>
-                        <input type="textarea" id="yes-no-question" name="question" required
-                            placeholder="Escribe tu pregunta de sí o no">
+                        <div class="form-questions-select">
+                            <label for="descendent-sign">Descendent Sign</label>
+                            <select name="descendent-sign" id="descendent-sign" required>
+                                <option value="aries">Aries</option>
+                                <option value="taurus">Taurus</option>
+                                <option value="gemini">Gemini</option>
+                                <option value="cancer">Cancer</option>
+                                <option value="leo">Leo</option>
+                                <option value="virgo">Virgo</option>
+                                <option value="libra">Libra</option>
+                                <option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+                                <option value="capricorn">Capricorn</option>
+                                <option value="aquarius">Aquarius</option>
+                                <option value="pisces">Pisces</option>
+                            </select>
+                        </div>
                     </div>
                 </fieldset>
 
@@ -186,19 +221,20 @@
                 </div>
             </form>
 
-            <button id="close-button-3" class="close-button">x</button>
+            <button id="close-button-3" class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </button>
         </section>
 
         <section id="overlay" class="hidden"></section>
 
         <section id="option-result" class="hidden">
-            <div class="cards">
-                <!-- <div class="option2-cards-text">
-                    <p>PAST</p>
-                    <p>PRESENT</p>
-                    <p>FUTURE</p>
-                </div> -->
-            </div>
+            <h1>LETS TAKE A LOOK TO YOUR FATE</h1>
+            <div class="cards"></div>
             <div class="card-text hidden">
                 <h4 class="card-title"></h4>
                 <p class="card-description"></p>
@@ -206,7 +242,35 @@
         </section>
 
 
-        <section id="instructions"></section>
+        <section id="instructions" class="hidden">
+            <h1>HOW TO READ TAROT</h1>
+            <H2>SINGLE CARD READING (DAILY GUIDANCE)</H2>
+            <p>This is a simple and quick method, ideal for daily insight or answering a straightforward question.</p>
+            <ol>
+                <li>Shuffle the deck while focusing on your question or intention.</li>
+                <li>Draw one card from the deck.</li>
+                <li>Interpret the card based on its meaning and how it relates to your situation.</li>
+                <li>Consider its upright or reversed position for additional nuance.</li>
+            </ol>
+
+            <H2>THREE CARD SPREAD (PAST, PRESENT, FUTURE)</H2>
+            <p>A versatile spread that provides more depth than a single-card pull.</p>
+            <ol>
+                <li>Shuffle the deck while focusing on your question or situation. </li>
+                <li>Draw three cards and lay them out in a row. </li>
+                <li>Interpret based on the chosen framework: </li>
+                <li>Analyze how the cards relate to each other, considering upright or reversed positions.</li>
+            </ol>
+
+            <h2>FIVE CARD SPREAS (DEEPER INSIGHT AND GUIDANCE)</h2>
+            <p>Provides a more detailed reading, often used for complex situations.</p>
+            <ol>
+                <li>Shuffle the deck while concentrating on your question.</li>
+                <li>Draw five cards and place them in a spread.</li>
+                <li>Read each card individually, then analyze how they connect as a whole.</li>
+                <li>Consider patterns, elements, and card reversals for a deeper interpretation.</li>
+            </ol>
+        </section>
 
         <section id="contact" class="hidden">
             <div class="contact__form-section">
@@ -224,12 +288,14 @@
                             <input type="text" id="name" name="name" required placeholder="Nombre">
                             <input type="text" id="surname" name="surname" required placeholder="Surname">
                             <input type="date" id="date">
-                            <label for="tarot-specialist">Choose a tarot specialist:</label>
-                            <select name="tarot-specialist" id="tarot-specialist" required>
-                                <option value="Esperanza Gracia">Esperanza Gracia</option>
-                                <option value="Rappel">Rappel</option>
-                                <option value="Maestro Joao">Maestro Joao</option>
-                            </select>
+                            <div class="form-questions-select">
+                                <label for="tarot-specialist">Choose a tarot specialist:</label>
+                                <select name="tarot-specialist" id="tarot-specialist" required>
+                                    <option value="Esperanza Gracia">Esperanza Gracia</option>
+                                    <option value="Rappel">Rappel</option>
+                                    <option value="Maestro Joao">Maestro Joao</option>
+                                </select>
+                            </div>
                         </div>
                     </fieldset>
 
@@ -243,12 +309,13 @@
                 <div class="contact__dates-text">
                     <h2 class="contact__dates-title">YOUR SESSIONS</h2>
                 </div>
+                <div class="contact__dates-cards"></div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Lorem, ipsum dolor sit amet</p>
+        <p>Anaís Cabado 2025</p>
     </footer>
 </body>
 

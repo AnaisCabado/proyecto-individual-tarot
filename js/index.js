@@ -7,3 +7,10 @@ import { CardHTML } from "./classesHTML.js";
 import { displayHome, displayInstructions, displayContact } from "./sections.js";
 
 import { formToLocalStorage } from "./localstorage.js";
+
+const burgerIcon = document.getElementById("burger_icon");
+const navApartados = document.getElementById("nav-apartados");
+
+burgerIcon.addEventListener("click", () => {
+        navApartados.classList.toggle("active"); // Agrega o quita la clase "active"
+});

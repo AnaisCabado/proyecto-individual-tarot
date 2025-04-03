@@ -9,8 +9,6 @@ class CardHTML extends Card {
     }
 
     initializeOptionHTML() {
-        const optionResult = document.getElementById("option-result");
-
         const cards = document.querySelector(".cards");
 
         const card = document.createElement("div");
@@ -32,8 +30,6 @@ class CardHTML extends Card {
 
         cards.append(card);
         
-        optionResult.appendChild(cards);
-
         // FUNCION DISPLAY IMG CARD
         card.addEventListener("click", () => {
             cardImg.style.opacity = "1";

@@ -168,9 +168,14 @@ body {
 /*END VARIABLES*/
 
 /*HEADER*/
+#logo {
+    font-family: var(--main-font);
+    font-weight: var(--main-font-weight);
+    font-size: 2rem;
+}
 header {
     width: 100vw;
-    height: 3em;
+    height: fit-content;
 
     background-color: black;
     color: var(--main-color-30);
@@ -193,17 +198,35 @@ header {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    align-items: center;
 
     padding: 1em 2em;
 }
-.menu-header__nav {
+#menu-header .menu__burger {
     display: flex;
     flex-flow: row;
     gap: 1em;
 }
 
-.menu-header__nav-link {
+.menu__burger-links {
+    display: flex;
+    flex-flow: row;
+    gap: 1em;
+}
+
+.menu__burger-links li {
     cursor: pointer;
+    padding: .5em 1em;
+    border-radius: 20px;
+    transition: all .3s ease;
+}
+.menu__burger-links li:hover {
+    background-color: var(--main-color-30);
+    color: black;
+}
+
+.menu__burger-icon {
+    display: none;
 }
 
 /*MAIN*/
@@ -229,7 +252,6 @@ p {
 }
 main {
     width: 100vw;
-    min-height: 100vh;
     margin-top: 3em;
 
     display: flex;
@@ -240,8 +262,21 @@ main {
 }
 /*OPCIONES TIRADAS*/
 #option-buttons {
+    min-height: 90vh;
+    width: 100%;
+    max-width: 2000px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em 10%;
+    
+    color: var(--main-color-30);
+}
+#option-buttons .buttons {
     width: 100vw;
-    height: 90vh;
 
     display: flex;
     flex-flow: row;
@@ -253,6 +288,8 @@ main {
     display: none;
 }
 #option-buttons button {
+    width: 100%;
+    max-width: 300px;
     font-family: var(--main-font);
     font-size: 1rem;
     font-weight: 600;
@@ -313,6 +350,7 @@ main {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: flex-end;
     gap: .5em;
 }
 #option1__form-questions input, #option2__form-questions input, #option3__form-questions input, 
@@ -386,9 +424,10 @@ main {
 #option-result {
     width: 100%;
     max-width: 2000px;
+    color: var(--main-color-30);
 
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 
@@ -446,9 +485,7 @@ main {
 }
 .card-text.active {
     width: 100%;
-    top: 100%;
     padding: 1em 10%;
-    position: absolute;
 
     display: flex;
     flex-flow: column;
@@ -471,30 +508,54 @@ main {
 }
 
 
+/* INSTRUCTIONS */
+#instructions.hidden {
+    display: none;
+}
+#instructions {
+    width: 100%;
+    max-width: 2000px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+
+    padding: 2em 10%;
+
+    color: var(--main-color-30);
+}
+
 /* CONTACT */
 #contact.hidden {
     display: none;
 }
 
 #contact.active {
+    width: 100%;
     max-width: 2000px;
 
     margin: 3em 10% 0;
+    padding: 2em;
 
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 3em;
 
     color: var(--main-color-30);
 }
 
 .contact__form-section {
+    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
     gap: 1em;
+
+    padding: 0 10%;
 }
 
 #contact__form {
@@ -515,10 +576,16 @@ main {
 #contact__form .contact__form-questions {
     display: flex;
     flex-flow: row;
+    align-items: flex-end;
     gap: .5em;
 }
 
-.contact__form-questions input, .contact__form-questions select {
+.form-questions-select {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+}
+.contact__form-questions input, .form-questions-select select {
     background-color: black;
     border: 2px solid var(--main-color-30);
     border-radius: 20px;
@@ -528,7 +595,7 @@ main {
     padding: .5em 1em;
 }
 
-.contact__form-submit {
+.contact__form-submit, .contact-date-delete {
     background-color: var(--main-color-30);
     color: black;
     border: 2px solid black;
@@ -542,12 +609,27 @@ main {
 
     transition: all .3s ease;
 }
-.contact__form-submit:hover {
+.contact__form-submit:hover, .contact-date-delete:hover {
     background-color: black;
     color: var(--main-color-30);
     border: 2px solid var(--main-color-30);
 }
 
+.contact__dates {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+}
+
+.contact__dates-cards {
+    width: 100%;
+    max-width: 1500px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1em;
+}
 .contact-date {
     background-color: black;
     color: var(--main-color-30);
@@ -569,4 +651,77 @@ footer {
     padding: 1em;
     background-color: black;
     color: var(--main-color-30);
+}
+
+
+/* MEDIA */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    
+    .menu__burger {
+        display: block;
+        position: relative;
+    }
+
+    .menu__burger-icon {
+        display: flex;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Ocultar los enlaces inicialmente */
+    .menu__burger-links {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        background: black;
+        color: var(--main-color-30);
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
+    /* Mostrar los enlaces cuando el menú está activo */
+    .menu__burger-links.active {
+        display: flex;
+        font-size: .8rem;
+    }
+
+
+
+    #option-buttons .buttons {
+        flex-flow: column;
+    }
+    
+    #option1__form, #option2__form, #option3__form {
+        gap: 4em;
+    }
+    #option1__form-questions, #option2__form-questions, #option3__form-questions {
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .card {
+        max-width: 100px;
+    }
+
+    #contact__form .contact__form-questions {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+    }
+    #contact__form .contact__form-questions input, #contact__form .contact__form-questions select {
+        width: 100%;
+    }
 }

@@ -20,11 +20,35 @@ function formToLocalStorage() {
 
     localStorage.setItem('data', JSON.stringify(data));
 
-    alert("Your session has succesfully been saved.");
+    const contactDates = document.querySelector(".contact__dates-cards");
+    let contactDatesCard = document.createElement("div");
+    contactDatesCard.classList.add("contact__dates-card")
+    let contactDate = document.createElement("div");
+    contactDate.classList.add("contact-date");
+
+    let datePerson = document.createElement("p");
+    datePerson.textContent = `${JSON.parse(localStorage.data).name} ${JSON.parse(localStorage.data).surname}`;
+    let dateDate = document.createElement("p");
+    dateDate.textContent = `${JSON.parse(localStorage.data).date}`;
+    let dateTarotSpecialist = document.createElement("p");
+    dateTarotSpecialist.textContent = `${JSON.parse(localStorage.data).tarotSpecialist}`;
+
+    let contactDateDelete = document.createElement("button");
+    contactDateDelete.classList.add("contact-date-delete");
+    contactDateDelete.textContent = "DELETE";
+
+    contactDate.append(datePerson, dateDate, dateTarotSpecialist, contactDateDelete);
+    contactDatesCard.appendChild(contactDate);
+    contactDates.appendChild(contactDatesCard);
+
+    contactDateDelete.addEventListener("click", () => {
+        localStorage.clear();
+        contactDatesCard.innerHTML = "";
+    })
 }
 
 if (localStorage.length > 0) {
-    const contactDates = document.querySelector(".contact__dates");
+    const contactDates = document.querySelector(".contact__dates-cards");
     let contactDatesCard = document.createElement("div");
     contactDatesCard.classList.add("contact__dates-card")
     let contactDate = document.createElement("div");
