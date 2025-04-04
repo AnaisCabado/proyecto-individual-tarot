@@ -284,8 +284,16 @@ main {
 
 
 /*OPCIONES TIRADAS*/
+#browser {
+    background-color: var(--main-color-30);
+    border: none;
+    border-radius: 20px;
+    font-family: var(--second-font);
+    font-size: 1rem;
+    padding: .5em 1em;
+}
 #option-buttons {
-    min-height: 80vh;
+    min-height: 90vh;
     width: 100%;
     max-width: 2000px;
 
@@ -700,7 +708,6 @@ footer {
         height: 30px;
     }
 
-    /* Ocultar los enlaces inicialmente */
     .menu__burger-links {
         display: none;
         position: absolute;
@@ -713,10 +720,12 @@ footer {
 
     }
 
-    /* Mostrar los enlaces cuando el menú está activo */
     .menu__burger-links.active {
         display: flex;
         font-size: .8rem;
+    }
+    #browser {
+        display: none;
     }
 
 
