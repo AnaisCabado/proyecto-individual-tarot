@@ -18,6 +18,7 @@ async function fetchData() {
 
 fetchData();
 
+
 export {
     fetchData
 }

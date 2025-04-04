@@ -1,6 +1,6 @@
 import { Card } from "./classes.js";
 
-let cardImg;
+
 
 class CardHTML extends Card {
     constructor(type, name_short, name, value_int, meaning_up, meaning_rev, desc) {
@@ -29,7 +29,7 @@ class CardHTML extends Card {
         card.appendChild(cardImg);
 
         cards.append(card);
-        
+
         // FUNCION DISPLAY IMG CARD
         card.addEventListener("click", () => {
             cardImg.style.opacity = "1";
@@ -39,7 +39,7 @@ class CardHTML extends Card {
             cardText.classList.replace("hidden", "active");
 
             cardTitle.textContent = "";
-            cardDescription.style.opacity = "0"; 
+            cardDescription.style.opacity = "0";
 
             let cardTitleSplit = this.name.split("");
             let i = 0;
@@ -62,6 +62,6 @@ class CardHTML extends Card {
     }
 }
 
-export { 
+export {
     CardHTML
 };

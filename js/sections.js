@@ -13,9 +13,11 @@ const optionResult = document.getElementById("option-result");
 const cards = document.querySelector(".cards");
 const optionResultTitle = document.querySelector(".card-title");
 const optionResultDescription = document.querySelector(".card-description");
+const browser = document.getElementById("card-display")
 
 // MOSTRAR SECCION HOME
 function displayHome() {
+    browser.innerHTML ="";
     home.classList.replace("hidden", "active");
 
     instructions.classList.replace("active", "hidden");
@@ -29,6 +31,8 @@ homeButton.addEventListener("click", displayHome);
 
 // MOSTRAR SECCION INSTRUCTIONS
 function displayInstructions() {
+    browser.innerHTML ="";
+
     instructions.classList.replace("hidden", "active");
 
     home.classList.replace("active", "hidden");
@@ -43,6 +47,8 @@ instructionsButton.addEventListener("click", displayInstructions);
 
 // MOSTRAR SECCION CONTACT
 function displayContact() {
+    browser.innerHTML ="";
+
     contact.classList.replace("hidden", "active");
 
     instructions.classList.replace("active", "hidden");
